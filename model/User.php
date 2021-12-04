@@ -116,7 +116,7 @@
 		public function iniciarSesion($usuario){
 			try {
 				# Consulta
-				$sql = 'SELECT * FROM usuarios WHERE 
+				$sql = 'SELECT * FROM USUARIOS WHERE 
 						usuario_correo = :usuario_correo AND
 						usuario_pass = :usuario_pass';
 
@@ -159,7 +159,7 @@
 		public function registrar($usuario){
 			try {
 				# Consulta: SQL
-				$sql = 'INSERT INTO usuarios VALUES (
+				$sql = 'INSERT INTO USUARIOS VALUES (
 							:id_rol,
 							null,
 							:usuario_doc_identidad,
@@ -225,7 +225,7 @@
 		public function getById($id){
 			try {
 				# Consulta
-				$sql = 'SELECT * FROM usuarios WHERE id_usuario=:id_usuario';
+				$sql = 'SELECT * FROM USUARIOS WHERE id_usuario=:id_usuario';
 
 				# Prepara la BBDD
 				$dbh = $this->pdo->prepare($sql);
@@ -262,7 +262,7 @@
 		public function actualizar($usuario){
 			try {
 				# Consulta
-				$sql = 'UPDATE usuarios SET
+				$sql = 'UPDATE USUARIOS SET
 							id_rol = :id_rol,
 							usuario_doc_identidad = :usuario_doc_identidad,
 							usuario_nombres = :usuario_nombres,
@@ -296,7 +296,7 @@
 		public function eliminar($id){
 			try {
 				# Consulta
-				$sql = 'DELETE FROM usuarios WHERE id_usuario=:id_usuario';
+				$sql = 'DELETE FROM USUARIOS WHERE id_usuario=:id_usuario';
 
 				# Prepara la BBDD
 				$dbh = $this->pdo->prepare($sql);
